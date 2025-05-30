@@ -28,9 +28,12 @@ jobs:
       run: npx playwright install --with-deps chromium
 
     - name: Create env file
+      env:
+        LT_USERNAME: ${{ secrets.LT_USERNAME }}
+        LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
       run: |
-        echo "LT_USERNAME=${{ secrets.LT_USERNAME }}" >> .env
-        echo "LT_ACCESS_KEY=${{ secrets.LT_ACCESS_KEY }}" >> .env
+        echo "LT_USERNAME=${LT_USERNAME}" >> .env
+        echo "LT_ACCESS_KEY=${LT_ACCESS_KEY}" >> .env
 
     - name: Run tests on LambdaTest
       run: npx playwright test src/tests/ui/registration/user-registration.spec.ts src/tests/ui/mentor-application-submit/mentor-application-submit.spec.ts --project=lambdatest-chrome
