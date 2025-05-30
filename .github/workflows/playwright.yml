@@ -7,8 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
-    name: Run Playwright Tests
+  test-lambdatest:
+    name: Run LambdaTest
     timeout-minutes: 60
     runs-on: ubuntu-latest
 
@@ -24,23 +24,21 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-
     - name: Create env file
       run: |
         echo "LT_USERNAME=${{ secrets.LT_USERNAME }}" >> .env
         echo "LT_ACCESS_KEY=${{ secrets.LT_ACCESS_KEY }}" >> .env
 
-    - name: Run Playwright tests
-      run: npm run test:lt
+    - name: Run tests on LambdaTest
+      run: npx playwright test src/tests/ui/registration/user-registration.spec.ts src/tests/ui/mentor-application-submit/mentor-application-submit.spec.ts --project=lambdatest-chrome
       env:
         CI: true
+        TEST_ENV: lambdatest
 
-    - name: Upload test results
+    - name: Upload LambdaTest results
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: playwright-report
+        name: playwright-report-lambdatest
         path: playwright-report/
         retention-days: 30
