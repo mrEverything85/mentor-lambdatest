@@ -30,8 +30,8 @@ jobs:
     - name: Create env file
       run: |
         touch .env
-        echo "LT_USERNAME=${{ secrets.LT_USERNAME }}" >> .env
-        echo "LT_ACCESS_KEY=${{ secrets.LT_ACCESS_KEY }}" >> .env
+        echo "LT_USERNAME=${{ env.LT_USERNAME }}" >> .env
+        echo "LT_ACCESS_KEY=${{ env.LT_ACCESS_KEY }}" >> .env
       shell: bash
 
     - name: Run tests on LambdaTest
@@ -39,8 +39,8 @@ jobs:
       env:
         CI: true
         TEST_ENV: lambdatest
-        LT_USERNAME: ${{ secrets.LT_USERNAME }}
-        LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+        LT_USERNAME: ${{ env.LT_USERNAME }}
+        LT_ACCESS_KEY: ${{ env.LT_ACCESS_KEY }}
 
     - name: Upload test results
       if: always()
