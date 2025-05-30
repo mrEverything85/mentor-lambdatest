@@ -1,0 +1,14 @@
+{
+    "admin_account": {
+      "email": "admin123@gmail.com",
+      "password": "admin@123"
+    },
+    "learner_account": {
+      "email": "khanhvu123@gmail.com",
+      "role": "learner"
+    },
+    "mentor_account": {
+      "email": "khanhvu1410@gmail.com",
+      "role": "mentor"
+    }
+}

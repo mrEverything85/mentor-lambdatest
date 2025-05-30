@@ -1,0 +1,39 @@
+{
+    "learner": {
+        "email": "learner.test@example.com",
+        "password": "Test@123456",
+        "details": {
+            "fullName": "Test Learner",
+            "avatarPath": "test_image.jpg",
+            "bio": "Aspiring developer seeking mentorship",
+            "preferredCommunication": ["Video Call", "Audio Call", "Text Chat"],
+            "availability": ["Weekdays", "Weekends", "Mornings", "Afternoons", "Evenings"],
+            "learningObjectives": "Learn full-stack development and best practices",
+            "preferences": {
+                "topics": ["Technical Skills", "Career Development", "Communication"],
+                "sessionFrequency": "BiWeekly",
+                "learningStyle": "Auditory",
+                "isPrivateProfile": true
+            }
+        }
+    },
+    "mentor": {
+        "email": "mentor.test@example.com",
+        "password": "Test@123456",
+        "details": {
+            "fullName": "Test Mentor",
+            "avatarPath": "test_image.jpg",
+            "bio": "Senior developer with 10 years experience",
+            "preferredCommunication": ["Video Call", "Audio Call", "Text Chat"],
+            "expertise": ["Programming", "Leadership", "Project Management"],
+            "professionalSkills": "JavaScript, TypeScript, React, Node.js",
+            "industryExperience": "10 years in software development",
+            "preferences": {
+                "sessionFrequency": "Weekly",
+                "sessionDuration": "1 hour",
+                "teachingApproach": ["Hands-on Practice", "Discussion Based", "Project Based", "Lecture Style"],
+                "isPrivateProfile": false
+            }
+        }
+    }
+}

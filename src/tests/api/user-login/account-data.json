@@ -1,0 +1,21 @@
+{
+  "valid_account": {
+    "email": "autotest1@gmail.com",
+    "password": "12345678Aa@",
+    "rememberMe": true,
+    "status": 200
+  },
+  "invalid_account": {
+    "email": "autotest1@gmail.com",
+    "password": "1234567890000",
+    "rememberMe": true,
+    "status": 400,
+    "detail": "Wrong password."
+  },
+  "unregistered_account": {
+    "email": "abcd12@gmail.com",
+    "password": "12345678Aa@",
+    "status": 404,
+    "detail": "Email does not exist, please try again."
+  }
+}

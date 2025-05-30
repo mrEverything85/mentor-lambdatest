@@ -1,0 +1,12 @@
+{
+    "valid_application": {
+        "education": "Bachelor of Computer Science, Stanford University",
+        "profession": "Senior Software Engineer at Tech Corp, 5 years experience",
+        "motivation": "Passionate about mentoring junior developers and sharing knowledge"
+    },
+    "invalid_application": {
+        "education": "",
+        "profession": "",
+        "motivation": ""
+    }
+}

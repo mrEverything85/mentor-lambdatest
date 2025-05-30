@@ -1,0 +1,50 @@
+{
+    "validLearnerRegisterData": {
+        "email": "test11@example.com",
+        "password": "Test123!",
+        "role": "Learner",
+        "userDetailsToAddDTO": {
+            "fullName": "Test User",
+            "bio": "Test bio",
+            "avatar": "",
+            "skills": "Testing",
+            "experience": "2 years",
+            "prefferedComm": "VideoCall",
+            "learningGoal": "Learn testing and become the best",
+            "sessionFreq": "Weekly",
+            "sessionDur": 60,
+            "prefferedStyle": "Visual",
+            "availability": "Weekends",
+            "expertise": "QA",
+            "preference": "Morning",
+            "teachingApproach": "Hands-on",
+            "isPrivate": false,
+            "messageAllowed": true,
+            "notiAllowed": true
+        }
+    },
+    "validMentorRegisterData": {
+        "email": "test11@example.com",
+        "password": "Test123!",
+        "role": "Mentor",
+        "userDetailsToAddDTO": {
+            "fullName": "Test User",
+            "bio": "Test bio",
+            "avatar": "",
+            "skills": "Testing",
+            "experience": "2 years",
+            "prefferedComm": "VideoCall",
+            "learningGoal": "Learn testing and become the best",
+            "sessionFreq": "Weekly",
+            "sessionDur": 60,
+            "prefferedStyle": "Visual",
+            "availability": "Weekends",
+            "expertise": "QA",
+            "preference": "Morning",
+            "teachingApproach": "Hands-on",
+            "isPrivate": false,
+            "messageAllowed": true,
+            "notiAllowed": true
+        }
+    }
+}

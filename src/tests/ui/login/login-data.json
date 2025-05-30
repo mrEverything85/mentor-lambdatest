@@ -1,0 +1,25 @@
+{
+  "valid_account": {
+    "learner": {
+      "email": "autotest1@gmail.com",
+      "password": "12345678Aa@",
+      "status": 200
+    },
+    "mentor": {
+      "email": "mentor123@gmail.com",
+      "password": "mentor@123"
+    },
+    "admin": {
+      "email": "admin123@gmail.com",
+      "password": "admin@123"
+    }
+  },
+  "invalid_account": {
+    "email": "linh@mailtothis.com",
+    "password": "12345678"
+  },
+  "unregistered_account": {
+    "email": "",
+    "password": "12345678Aa@"
+  }
+}

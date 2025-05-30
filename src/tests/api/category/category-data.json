@@ -1,0 +1,41 @@
+{
+  "get_valid_category": {
+    "categoryId": "a1234567-dcba-1234-8ac9-6ff1ee021c88"
+  },
+  "get_invalid_category": {
+    "categoryId": "aaaaaaaaaaaaa"
+  },
+  "create_valid_category": {
+    "name": "Finance 5",
+    "categoryStatus": "Active",
+    "description": "Courses related to financial management and accounting principles"
+  },
+  "create_invalid_category": [
+    {
+      "name": "Accounting and Finance",
+      "categoryStatus": "Active",
+      "description": "Courses related to financial management and accounting principles"
+    },
+    {
+      "name": "",
+      "categoryStatus": "Active",
+      "description": ""
+    }
+  ],
+
+  "delete_valid_category": {
+    "categoryId": "ed3e1d5f-1a0b-43e9-29d6-08dd95b3f900"
+  },
+  "delete_invalid_category": {
+    "categoryId": "aaaaaaaaaaaaa"
+  },
+  "update_valid_category": {
+    "categoryId": "a9e3684e-3a56-4214-29d3-08dd95b3f900",
+    "name": "learn c# programming",
+    "categoryStatus": "Active",
+    "description": "Examples in Each Chapter. Our 'Try it Yourself' editor makes it easy to learn C#"
+  },
+  "update_invalid_category": {
+    "categoryId": "aaaaaaaa"
+  }
+}
