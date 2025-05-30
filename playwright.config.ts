@@ -1,37 +1,47 @@
 import { defineConfig, devices } from '@playwright/test';
+import 'dotenv/config';
+
+const isCI = !!process.env.CI;
+const isLambdaTest = process.env.TEST_ENV === 'lambdatest';
 
 export default defineConfig({
   testDir: './src/tests',
-  fullyParallel: true,
-  forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  fullyParallel: !isCI,
+  workers: isCI ? 1 : undefined,
+  reporter: [
+    ['html'],
+    ['list']
+  ],
   use: {
     baseURL: 'https://happy-wave-0355c8300.6.azurestaticapps.net/',
-    headless: false,
+    trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
   },
-
   projects: [
-    {
-      name: 'lambdatest-chrome', // Maps to Chrome in modifyCapabilities
-      use: {
-        browserName: 'chromium', // Playwright browser type
-        viewport: { width: 1280, height: 720 },
-      },
-    },
-    {
-      name: 'lambdatest-firefox',
-      use: {
-        browserName: 'firefox',
-        viewport: { width: 1280, height: 720 },
-      },
-    },
     {
       name: 'local-chrome',
       use: {
-        browserName: 'chromium',
+        ...devices['Desktop Chrome'],
+        headless: isCI,
       },
     },
+    {
+      name: 'local-firefox',
+      use: {
+        ...devices['Desktop Firefox'],
+        headless: isCI,
+      },
+    },
+    ...(isLambdaTest ? [
+      {
+        name: 'lambdatest-chrome',
+        use: { ...devices['Desktop Chrome'] },
+      },
+      {
+        name: 'lambdatest-firefox',
+        use: { ...devices['Desktop Firefox'] },
+      }
+    ] : [])
   ],
 });

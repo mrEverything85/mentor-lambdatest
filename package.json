@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:local": "playwright test --project=local-chrome",
+    "test:ci": "playwright test --project=local-chrome --reporter=list",
+    "test:lt": "cross-env TEST_ENV=lambdatest playwright test --project=lambdatest-chrome",
+    "test:ui": "playwright test --ui"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
