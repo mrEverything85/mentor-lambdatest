@@ -33,7 +33,7 @@ jobs:
         echo "LT_ACCESS_KEY=${{ secrets.LT_ACCESS_KEY }}" >> .env
 
     - name: Run Playwright tests
-      run: npm run test:local
+      run: npm run test:lt
       env:
         CI: true
 
